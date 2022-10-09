@@ -1,0 +1,259 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* // // Kolory::
+// .color1 {color: #242121;}
+// .color2 {color: #3e3834;}
+// .color3 {color: #5e5351;}
+// .color4 {color: #887d73;}
+// .color5 {color: #bcb09e;} */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #bcb09e;
+}
+
+.menu {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+}
+.menu__icon {
+  position: absolute;
+  right: 4%;
+  cursor: pointer;
+  z-index: 400;
+}
+.menu__square {
+  position: absolute;
+  height: 100vh;
+  background-color: #3e3834;
+  right: 0%;
+  display: none;
+  -webkit-animation: widthSquare 0.6s forwards;
+          animation: widthSquare 0.6s forwards;
+  z-index: 200;
+}
+@-webkit-keyframes widthSquare {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 40%;
+  }
+}
+@keyframes widthSquare {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 40%;
+  }
+}
+.menu__square-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+.menu__square-box a {
+  font-size: 3rem;
+  margin-bottom: 0.4em;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.active {
+  display: block;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+}
+.header__nav {
+  font-size: 6rem;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+.header__text {
+  font-size: 4rem;
+  margin-left: 2em;
+  padding: 0.5em 0.9em;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  z-index: -100;
+  overflow: hidden;
+}
+
+.coffee {
+  position: relative;
+  width: 100%;
+}
+.coffee__img {
+  position: absolute;
+  right: 4%;
+  width: 360px;
+  height: 360px;
+  z-index: -100;
+}
+
+button {
+  position: relative;
+  margin-left: 3em;
+  font-size: 40px;
+  color: #fff;
+  width: 350px;
+  background: linear-gradient(45deg, black, #3e3834);
+  padding: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: #fff;
+}
+
+button::after {
+  content: "";
+  height: 150%;
+  width: 50px;
+  position: absolute;
+  left: -100px;
+  top: -25px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: rotate(20deg);
+  transition: transform 0.3s;
+}
+
+button:hover::after {
+  transform: translateX(500px) rotate(20deg);
+}
+
+.beans {
+  position: relative;
+  width: 100%;
+}
+.beans__box {
+  position: absolute;
+  right: 12%;
+  width: 80px;
+  height: 80px;
+}
+
+.beans__box {
+  -webkit-animation: downBeans 6s infinite linear;
+          animation: downBeans 6s infinite linear;
+}
+
+@-webkit-keyframes downBeans {
+  0% {
+    transform: translateY(50px);
+  }
+  25% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(150px);
+  }
+  75% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes downBeans {
+  0% {
+    transform: translateY(50px);
+  }
+  25% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(150px);
+  }
+  75% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+.glassbeans {
+  position: relative;
+  width: 100vw;
+  margin-top: 10em;
+  overflow: hidden;
+}
+.glassbeans__img {
+  bottom: 0%;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/coffee-beans-2258839_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+@media (max-width: 568px) {
+  .coffee__img {
+    width: 150px;
+    height: 150px;
+  }
+  .header__nav {
+    margin-left: 1em;
+  }
+  .header__text {
+    margin-left: 1em;
+  }
+  .menu__square {
+    -webkit-animation: widthSquare 0.6s forwards;
+            animation: widthSquare 0.6s forwards;
+  }
+  @-webkit-keyframes widthSquare {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 60%;
+    }
+  }
+  @keyframes widthSquare {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 60%;
+    }
+  }
+  button {
+    margin-left: 0.3em;
+    margin-bottom: 0.5em;
+  }
+  .glassbeans {
+    position: relative;
+    margin-top: 16em;
+  }
+}
+@media (min-width: 568px) and (max-width: 1200px) {
+  .glassbeans__img {
+    height: 360px;
+  }
+}/*# sourceMappingURL=main.css.map */

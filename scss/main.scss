@@ -1,0 +1,269 @@
+*, 
+*::after, 
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import './color.scss';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $bg;
+
+  
+}
+
+.menu {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+ 
+
+    &__icon {
+        position: absolute;
+        right: 4%;
+        cursor: pointer;
+        z-index: 400;
+    }
+
+    &__square{
+        position: absolute;
+        height: 100vh;
+        background-color: $bg_square;
+        right: 0%;
+        display: none;
+        animation: widthSquare .6s forwards;
+        z-index: 200;
+
+        @keyframes widthSquare {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 40%;
+            }
+            
+        }
+
+        &-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+
+            a {
+                font-size: 3rem;
+                margin-bottom: 0.4em;
+                text-decoration: none;
+                color: white;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.active {
+    display: block;
+}
+
+// HEADER
+
+.header {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+
+    &__nav {
+        font-size: 6rem;
+        margin-top: 2em;    
+        margin-left: 2em;
+    }
+
+    &__text {
+        font-size: 4rem;
+        margin-left: 2em;
+        padding: 0.5em 0.9em;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 100;
+        z-index: -100;
+        overflow: hidden;
+    }
+}
+    
+
+.coffee {
+    position: relative;
+    width: 100%;
+
+    &__img {
+        position: absolute;
+        right: 4%;
+        width: 360px;
+        height: 360px;
+        z-index: -100;
+    }
+}
+
+button {
+    position: relative;
+    margin-left: 3em;
+    font-size: 40px;
+    color: #fff;
+    width: 350px;
+    background: linear-gradient(45deg, black, $bg_square);
+    padding: 0.2em;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    overflow: hidden;
+}
+
+button:focus {
+    outline: #fff;
+}
+
+button::after {
+    content: '';
+    height: 150%;
+    width: 50px;
+    position: absolute;
+    left: -100px;
+    top: -25px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(20deg);
+    transition: transform .3s;
+}
+
+button:hover::after {
+    transform: translateX(500px) rotate(20deg);
+
+}
+
+
+.beans {
+    position: relative;
+    width: 100%;
+    &__box {
+        position: absolute;
+        right: 12%;
+        width: 80px;
+        height: 80px;
+        
+    }
+}
+
+.beans__box {
+    animation: downBeans 6s infinite linear;
+}
+@keyframes downBeans {
+    0% {
+        transform: translateY(50px);
+    }
+
+    25% {
+        transform: translateY(100px);
+    }
+
+    50% {
+        transform: translateY(150px);
+    }
+ 
+    75% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+.glassbeans {
+    position: relative;
+    width: 100vw;
+    margin-top: 10em;
+    overflow: hidden;
+
+    &__img {
+        bottom: 0%;
+        width: 100%;
+        height: 500px;
+        background-image: url("../img/coffee-beans-2258839_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+}
+
+
+// URZĄDZENIA MOBILNE
+
+@media (max-width: 568px) {
+    .coffee {
+        &__img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    
+.header {
+
+    &__nav {
+        margin-left: 1em;
+    }
+
+    &__text {
+        margin-left: 1em;  
+}}
+
+.menu {
+    &__square{
+        animation: widthSquare .6s forwards;
+
+        @keyframes widthSquare {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 60%;
+            }
+            
+        }
+
+}
+}
+
+button {
+    margin-left: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+.glassbeans {
+    position: relative;
+    margin-top: 16em;
+  }
+  
+
+}
+
+
+@media (min-width: 568px)  and (max-width: 1200px) {
+    .glassbeans {
+
+        &__img {
+            height: 360px;
+        }
+    }
+    
+
+}
