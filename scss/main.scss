@@ -203,6 +203,33 @@ button:hover::after {
     }
 }
 
+.boxline {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+
+    &__textline {
+        margin-top: 1em;
+        font-size: 4rem;
+        margin-left: 3em;
+    }
+
+    &__underline {
+        height: 4px;
+        width: 120px;
+        background-color: $icon;
+        margin-left: 10em;
+    }
+
+
+}
+
+
+
+
+
 
 // URZĄDZENIA MOBILNE
 
@@ -252,14 +279,22 @@ button {
     position: relative;
     margin-top: 16em;
   }
-  
 
-}
+  .boxline {
+
+    &__textline {
+        margin-left: 2em;
+    }
+
+    &__underline {
+        margin-left: 7em;
+    }
+}}
+
 
 
 @media (min-width: 568px)  and (max-width: 1200px) {
     .glassbeans {
-
         &__img {
             height: 360px;
         }

@@ -212,6 +212,24 @@ button:hover::after {
   overflow: hidden;
 }
 
+.boxline {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.boxline__textline {
+  margin-top: 1em;
+  font-size: 4rem;
+  margin-left: 3em;
+}
+.boxline__underline {
+  height: 4px;
+  width: 120px;
+  background-color: #5e5351;
+  margin-left: 10em;
+}
+
 @media (max-width: 568px) {
   .coffee__img {
     width: 150px;
@@ -250,6 +268,12 @@ button:hover::after {
   .glassbeans {
     position: relative;
     margin-top: 16em;
+  }
+  .boxline__textline {
+    margin-left: 2em;
+  }
+  .boxline__underline {
+    margin-left: 7em;
   }
 }
 @media (min-width: 568px) and (max-width: 1200px) {
